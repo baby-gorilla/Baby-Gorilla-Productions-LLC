@@ -27,6 +27,19 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
+
+          {/* inline script elements */}
+          <script type="application/ld+json">{`
+          var MTIProjectId='f2fb82fc-799e-44a7-ab5f-8f561dbc72c3';
+            (function() {
+              var mtiTracking = document.createElement('script');
+              mtiTracking.type='text/javascript';
+              mtiTracking.async='true';
+               mtiTracking.src='mtiFontTrackingCode.js';
+              (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+            })();
+          `}</script>
+
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
