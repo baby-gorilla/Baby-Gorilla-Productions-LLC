@@ -24,6 +24,7 @@ const Layout = ({ children }) => (
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
+            { name: 'google-site-verification', content: 'c55rvD3il223DwPOIR5V35Y5qKOAumJdirtFVI0T31Y' },
           ]}
         >
           <html lang="en" />
@@ -39,6 +40,15 @@ const Layout = ({ children }) => (
               (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
             })();
           `}</script>
+
+        {/* inline script elements */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125265976-1"></script>
+        <script>{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-125265976-1');
+        `}</script>
 
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
